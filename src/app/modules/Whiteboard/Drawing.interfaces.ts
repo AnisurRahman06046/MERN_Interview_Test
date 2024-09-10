@@ -8,7 +8,7 @@ export type ILine = {
 };
 
 export type IShape = {
-  type: string; // e.g., "rectangle", "circle"
+  type: string; 
   startX: number;
   startY: number;
   endX?: number; // Only for rectangle, not used in circles

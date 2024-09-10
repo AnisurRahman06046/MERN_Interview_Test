@@ -15,68 +15,51 @@ const createDrawing = catchAsync(async (req, res) => {
 
 // fetch all drawings
 const getAllDrawings = catchAsync(async (req, res) => {
-  const drawings = await drawingServices.getAllDrawings();
+  const result = await drawingServices.getAllDrawings();
   sendApiResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'All drawings fetched successfully',
-    data: drawings,
+    data: result,
   });
 });
 
 // fetch a single drawing
 const getDrawingById = catchAsync(async (req, res) => {
-  const drawing = await drawingServices.getDrawingById(req.params.id);
-  //   if (!drawing) {
-  //     return sendApiResponse(res, {
-  //       statusCode: httpStatus.NOT_FOUND,
-  //       success: false,
-  //       message: 'Drawing not found',
-  //     });
-  //   }
+  const result = await drawingServices.getDrawingById(req.params.id);
+
   sendApiResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Drawing fetched successfully',
-    data: drawing,
+    data: result,
   });
 });
 
 // update a drawing
 const updateDrawing = catchAsync(async (req, res) => {
-  const updatedDrawing = await drawingServices.updateDrawing(
+  const result = await drawingServices.updateDrawing(
     req.params.id,
     req.body,
   );
-  // if (!updatedDrawing) {
-  //   return sendApiResponse(res, {
-  //     statusCode: httpStatus.NOT_FOUND,
-  //     success: false,
-  //     message: 'Drawing not found',
-  //   });
-  // }
+
   sendApiResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Drawing updated successfully',
-    data: updatedDrawing,
+    data: result,
   });
 });
 
 // delete a drawing
 const deleteDrawing = catchAsync(async (req, res) => {
-  const deletedDrawing = await drawingServices.deleteDrawing(req.params.id);
-  // if (!deletedDrawing) {
-  //   return sendApiResponse(res, {
-  //     statusCode: httpStatus.NOT_FOUND,
-  //     success: false,
-  //     message: 'Drawing not found',
-  //   });
-  // }
+  const result = await drawingServices.deleteDrawing(req.params.id);
+
   sendApiResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Drawing deleted successfully',
+    data:result
   });
 });
 export const drawingControllers = {

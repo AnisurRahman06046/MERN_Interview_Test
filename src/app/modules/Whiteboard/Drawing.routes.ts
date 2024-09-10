@@ -10,3 +10,4 @@ router.patch('/drawing/:id', drawingControllers.updateDrawing);
 router.delete('/delete/:id', drawingControllers.deleteDrawing);
 
 export const drawingRoutes = router;
+
