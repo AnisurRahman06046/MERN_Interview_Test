@@ -14,6 +14,10 @@ This project is divided into four main sections:
 - React.js Frontend: A web interface for displaying and interacting with drawings.
 - Node.js Server: Serves the React frontend and handles API communication.
 
+### Technologies:
+- **Frontend**: ReactJs, JavaScript, TailwindCSS, Fabric.js
+- **Backend** : Node, Express, Typescript, Mongodb, Mongoose.
+
 ### Rest Apis:
 - POST `/api/v1/drawings/create`: Create a new drawing.
 - GET `/api/v1/drawings`: Retrieve all drawings.
