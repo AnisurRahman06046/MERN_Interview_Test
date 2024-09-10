@@ -8,7 +8,13 @@ import routes from './app/routes';
 
 import config from './app/config';
 
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:5173', // Replace with your front-end URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+};
+
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
